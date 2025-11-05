@@ -746,144 +746,16 @@
         background-image: none !important;
     }
 
-    < !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Navigation Bar Concept</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>
 
-    /* 1. Overall Page Background (Black) and White Text */
-    body {
-        background-color: #000000;
-        /* Black background */
-        color: #ffffff;
-        /* Default text color is white */
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        background: transparent !important;
+        background-image: none !important;
     }
-
-    /* 2. Main Navigation Bar Container */
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* Background removed (transparent) */
-        padding: 10px 0;
-    }
-
-    /* 3. User Name/Logo Section */
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        font-size: 1.5em;
-        font-weight: bold;
-        color: #ffffff;
-        /* Ensure brand name is white */
-    }
-
-    .navbar-brand i {
-        font-size: 1.8em;
-        margin-right: 10px;
-        /* Blue color for the icon, matching the image tone */
-        color: #4A90E2;
-    }
-
-    /* 4. Navigation Links Container */
-    .navbar-links {
-        display: flex;
-        gap: 15px;
-        /* Space between the button boxes */
-    }
-
-    /* 5. Individual Navigation Button Box */
-    .nav-item {
-        /* Small box background removed (transparent) */
-        background-color: transparent;
-        /* Border and shadow removed for a cleaner look when transparent */
-        padding: 10px 15px;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        border-radius: 8px;
-        /* Rounded corners */
-    }
-
-    /* Optional: Hover effect for better UX */
-    .nav-item:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        /* Slight white highlight on hover */
-    }
-
-    /* 6. Icon Styling */
-    .nav-item i {
-        display: block;
-        font-size: 1.5em;
-        margin-bottom: 5px;
-        /* Change the icon color to white */
-        color: #ffffff;
-    }
-
-    /* 7. Text Styling (Link text is already white from body style, but enforcing it) */
-    .nav-item span {
-        font-size: 0.9em;
-        color: #ffffff;
-        text-transform: capitalize;
-    }
-</style>
-</head>
-
-<body>
-
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <i class="fas fa-user-circle"></i>
-            <span>Vansh Jaiswal</span>
-        </div>
-
-        <div class="navbar-links">
-
-            <div class="nav-item">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </div>
-
-            <div class="nav-item">
-                <i class="fas fa-user"></i>
-                <span>About</span>
-            </div>
-
-            <div class="nav-item">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Education</span>
-            </div>
-
-            <div class="nav-item">
-                <i class="fas fa-briefcase"></i>
-                <span>Experience</span>
-            </div>
-
-            <div class="nav-item">
-                <i class="fas fa-certificate"></i>
-                <span>Certifications</span>
-            </div>
-
-            <div class="nav-item">
-                <i class="fas fa-envelope"></i>
-                <span>Contact</span>
-            </div>
-
-        </div>
-    </nav>
-
-</body>
-
-</html>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-background: transparent !important;
-background-image: none !important;
-}
 </style>
 
 <body>
@@ -1470,11 +1342,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-1"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-1" type="file" style="display:none" />
                                                         <label for="cert-1"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-1" type="file" style="display:none" />
                                                         <a href="#" target="_blank" rel="noopener"
@@ -1498,11 +1370,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-2"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-2" type="file" style="display:none" />
                                                         <label for="cert-2"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-2" type="file" style="display:none" />
                                                     </div>
@@ -1522,11 +1394,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-3"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-3" type="file" style="display:none" />
                                                         <label for="cert-3"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-3" type="file" style="display:none" />
                                                     </div>
@@ -1546,11 +1418,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-4"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-4" type="file" style="display:none" />
                                                         <label for="cert-4"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-4" type="file" style="display:none" />
                                                     </div>
@@ -1572,11 +1444,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-5"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-5" type="file" style="display:none" />
                                                         <label for="cert-5"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-5" type="file" style="display:none" />
                                                     </div>
@@ -1597,11 +1469,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-6"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-6" type="file" style="display:none" />
                                                         <label for="cert-6"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-6" type="file" style="display:none" />
                                                     </div>
@@ -1622,11 +1494,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-7"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-7" type="file" style="display:none" />
                                                         <label for="cert-7"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-7" type="file" style="display:none" />
                                                     </div>
@@ -1647,11 +1519,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-8"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-8" type="file" style="display:none" />
                                                         <label for="cert-8"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-8" type="file" style="display:none" />
                                                     </div>
@@ -1672,11 +1544,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-9"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-9" type="file" style="display:none" />
                                                         <label for="cert-9"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-9" type="file" style="display:none" />
                                                     </div>
@@ -1698,11 +1570,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-10"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-10" type="file" style="display:none" />
                                                         <label for="cert-10"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-10" type="file" style="display:none" />
                                                     </div>
@@ -1722,11 +1594,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-11"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-11" type="file" style="display:none" />
                                                         <label for="cert-11"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-11" type="file" style="display:none" />
                                                     </div>
@@ -1746,11 +1618,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-12"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-12" type="file" style="display:none" />
                                                         <label for="cert-12"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-12" type="file" style="display:none" />
                                                     </div>
@@ -1771,11 +1643,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-13"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-13" type="file" style="display:none" />
                                                         <label for="cert-13"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-13" type="file" style="display:none" />
                                                     </div>
@@ -1796,11 +1668,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-14"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-14" type="file" style="display:none" />
                                                         <label for="cert-14"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-14" type="file" style="display:none" />
                                                     </div>
@@ -1821,11 +1693,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-15"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-15" type="file" style="display:none" />
                                                         <label for="cert-15"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-15" type="file" style="display:none" />
                                                     </div>
@@ -1846,11 +1718,11 @@ background-image: none !important;
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
                                                         <label for="offer-16"
-                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-16" type="file" style="display:none" />
                                                         <label for="cert-16"
-                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">
                                                             Certificate</label>
                                                         <input id="cert-16" type="file" style="display:none" />
                                                     </div>
@@ -2064,8 +1936,6 @@ background-image: none !important;
                 <!-- Box 1: Quick Connect -->
                 <div class="contact-box animate-in delay-1" aria-label="Quick contact">
                     <h4>Quick Connect</h4>
-                    <p>Choose a fast way to reach out — email, phone, or LinkedIn. I typically respond within 24 hours.
-                    </p>
                     <div class="mini-list">
                         <a href="mailto:mr.vanshjaiswal008@gmail.com"><i class="fas fa-envelope"
                                 style="color:var(--primary-color);width:18px"></i> Email:
@@ -2083,7 +1953,6 @@ background-image: none !important;
                 <!-- Box 2: Message Form -->
                 <div class="contact-box animate-in delay-2" aria-label="Contact form">
                     <h4>Send a Message</h4>
-                    <p>Short message works best — tell me your goal, timeline, and budget (if any).</p>
                     <form id="quickContactForm" class="floating-form"
                         onsubmit="event.preventDefault(); quickContactSubmit();">
                         <input type="text" id="qc-name" name="name" placeholder="Your name" required />
@@ -2093,17 +1962,12 @@ background-image: none !important;
                             <i class="fas fa-paper-plane" style="width:14px"></i> Send Message
                         </button>
                         <div id="qc-success" class="success-badge">Message ready to be sent — thank you!</div>
-                        <div class="note-small">Note: This demo form shows a success message. Integrate with your
-                            backend or email service to receive messages.</div>
                     </form>
                 </div>
 
                 <!-- Box 3: Availability & Actions -->
                 <div class="contact-box animate-in" aria-label="Availability and quick actions">
                     <h4>Availability & Quick Actions</h4>
-                    <p>Open to internships, freelance projects and part-time collaboration. Pick an immediate action
-                        below.</p>
-
                     <div class="mini-list">
                         <a href="https://drive.google.com/file/d/1L_REocsqfsCKGxPn-RIHfJr4LEFgw3-B/view?usp=drive_link"
                             target="_blank"><i class="fas fa-file-download"
@@ -2124,8 +1988,6 @@ background-image: none !important;
                     </div>
 
                     <div class="note-small" style="margin-top:12px;">
-                        Tip: Use "Download Resume" to get an offline copy. For urgent requests, call or WhatsApp
-                        directly.
                     </div>
                 </div>
             </div>
