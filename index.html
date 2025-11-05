@@ -1,0 +1,2763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr.Vansh Jaiswal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --text-color: #1f2937;
+            --light-color: #f9fafb;
+            --dark-color: #111827;
+            --accent-color: #f59e0b;
+            --gray-light: #e5e7eb;
+            --gray-medium: #9ca3af;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray-medium);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(249, 250, 251, 1) 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--gray-medium);
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .personal-info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .personal-info-item i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 4px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        /* Resume Section */
+        .resume-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .resume-col {
+            flex: 1;
+        }
+
+        .resume-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .resume-item h3 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .resume-item h4 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .resume-item .date {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .resume-item p {
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .contact-details h3 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p,
+        .contact-details a {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -8px;
+            left: 0;
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-links a i {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Edit Mode */
+        .edit-mode {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1001;
+        }
+
+        .edit-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transition: var(--transition);
+        }
+
+        .edit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .edit-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1002;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .edit-modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            border-radius: 10px;
+            padding: 30px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .edit-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray-medium);
+        }
+
+        .edit-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .edit-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gray-medium);
+        }
+
+        .edit-tab.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .edit-tab-content {
+            display: none;
+        }
+
+        .edit-tab-content.active {
+            display: block;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 992px) {
+
+            .hero-content,
+            .about-content,
+            .resume-container,
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .hero-image {
+                order: -1;
+                margin-bottom: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<style>
+    /* remove background/gradient from main headings and hero area */
+    .hero,
+    .hero-content {
+        background: transparent !important;
+        background-image: none !important;
+    }
+
+    < !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Navigation Bar Concept</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>
+
+    /* 1. Overall Page Background (Black) and White Text */
+    body {
+        background-color: #000000;
+        /* Black background */
+        color: #ffffff;
+        /* Default text color is white */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* 2. Main Navigation Bar Container */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Background removed (transparent) */
+        padding: 10px 0;
+    }
+
+    /* 3. User Name/Logo Section */
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #ffffff;
+        /* Ensure brand name is white */
+    }
+
+    .navbar-brand i {
+        font-size: 1.8em;
+        margin-right: 10px;
+        /* Blue color for the icon, matching the image tone */
+        color: #4A90E2;
+    }
+
+    /* 4. Navigation Links Container */
+    .navbar-links {
+        display: flex;
+        gap: 15px;
+        /* Space between the button boxes */
+    }
+
+    /* 5. Individual Navigation Button Box */
+    .nav-item {
+        /* Small box background removed (transparent) */
+        background-color: transparent;
+        /* Border and shadow removed for a cleaner look when transparent */
+        padding: 10px 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        border-radius: 8px;
+        /* Rounded corners */
+    }
+
+    /* Optional: Hover effect for better UX */
+    .nav-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Slight white highlight on hover */
+    }
+
+    /* 6. Icon Styling */
+    .nav-item i {
+        display: block;
+        font-size: 1.5em;
+        margin-bottom: 5px;
+        /* Change the icon color to white */
+        color: #ffffff;
+    }
+
+    /* 7. Text Styling (Link text is already white from body style, but enforcing it) */
+    .nav-item span {
+        font-size: 0.9em;
+        color: #ffffff;
+        text-transform: capitalize;
+    }
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-user-circle"></i>
+            <span>Vansh Jaiswal</span>
+        </div>
+
+        <div class="navbar-links">
+
+            <div class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+
+            <div class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </div>
+
+            <div class="nav-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Education</span>
+            </div>
+
+            <div class="nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </div>
+
+            <div class="nav-item">
+                <i class="fas fa-certificate"></i>
+                <span>Certifications</span>
+            </div>
+
+            <div class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </div>
+
+        </div>
+    </nav>
+
+</body>
+
+</html>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+background: transparent !important;
+background-image: none !important;
+}
+</style>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-user-tie animated-icon"></i>
+                    <span class="animated-text">Vansh Jaiswal</span>
+                </div>
+
+                <style>
+                    /* Logo animations */
+                    .logo {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        cursor: pointer;
+                        transition: transform 0.3s ease;
+                    }
+
+                    .logo:hover {
+                        transform: scale(1.05);
+                    }
+
+                    .animated-icon {
+                        font-size: 2.8rem;
+                        color: var(--primary-color);
+                        animation: pulse 2s infinite;
+                    }
+
+                    .animated-text {
+                        background: linear-gradient(55deg, var(--primary-color), var(--primary-dark));
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        font-weight: 900;
+                        animation: slideIn 0.5s ease-out;
+                    }
+
+                    /* Animations */
+                    @keyframes pulse {
+                        0% {
+                            transform: scale(1);
+                        }
+
+                        50% {
+                            transform: scale(1.1);
+                        }
+
+                        100% {
+                            transform: scale(1);
+                        }
+                    }
+
+                    @keyframes slideIn {
+                        from {
+                            opacity: 0;
+                            transform: translateX(-20px);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+
+                    /* Responsive styles */
+                    @media screen and (max-width: 768px) {
+                        .logo {
+                            font-size: 1.2rem;
+                        }
+
+                        .animated-icon {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        .logo {
+                            font-size: 1rem;
+                        }
+
+                        .animated-icon {
+                            font-size: 1.3rem;
+                        }
+                    }
+
+                    /* Fix header for scrolling */
+                    header {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background: white;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                        z-index: 1000;
+                        transition: transform 0.3s ease;
+                    }
+
+                    /* Hide header on scroll down, show on scroll up */
+                    header.scroll-up {
+                        transform: translateY(0);
+                    }
+
+                    header.scroll-down {
+                        transform: translateY(-100%);
+                    }
+                </style>
+
+                <script>
+                    // Handle header visibility on scroll
+                    let lastScroll = 0;
+                    window.addEventListener('scroll', () => {
+                        const header = document.querySelector('header');
+                        const currentScroll = window.pageYOffset;
+
+                        if (currentScroll > lastScroll) {
+                            header.classList.add('scroll-down');
+                            header.classList.remove('scroll-up');
+                        } else {
+                            header.classList.remove('scroll-down');
+                            header.classList.add('scroll-up');
+                        }
+                        lastScroll = currentScroll;
+                    });
+
+                    // Smooth scroll to sections
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        });
+                    });
+                </script>
+                <div class="section-links">
+                    <div class="section-box">
+                        <a href="#home" class="section-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class="section-box">
+                        <a href="#about" class="section-link">
+                            <i class="fas fa-user"></i>
+                            <span>About</span>
+                        </a>
+                    </div>
+                    <div class="section-box">
+                        <a href="#resume" class="section-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </a>
+                    </div>
+                    <div class="section-box">
+                        <a href="#re6sume" class="section-link">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Experience</span>
+                        </a>
+                    </div>
+                    <div class="section-box">
+                        <a href="#re5sume" class="section-link">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certifications</span>
+                        </a>
+                    </div>
+                    <div class="section-box">
+                        <a href="#contact" class="section-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+                <style>
+                    .section-links {
+                        display: flex;
+                        gap: 15px;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding: 20px 0;
+                    }
+
+                    .section-box {
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                        transition: transform 0.3s ease;
+                    }
+
+                    .section-box:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    /* Decreased width by 10px (from 110px -> 100px) and slightly reduced padding */
+                    .section-link {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 12px 20px;
+                        min-width: 100px;
+                        gap: 8px;
+                    }
+
+                    .section-link i {
+                        font-size: 24px;
+                        color: var(--primary-color);
+                    }
+
+                    .section-link span {
+                        font-weight: 600;
+                        color: var(--text-color);
+                    }
+                </style>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <pre>
+
+
+
+
+
+                    </pre>
+                    <h1>Hi, I'm <span>Vansh Jaiswal</span></h1>
+                    <h2>[Management Student]</h2>
+                    <p>I'm a passionate professional with expertise in creative Work with New Ideas. With 2 years Plus
+                        of experience, I specialize in Ms office, Senior HR Manager, Hub Assitant, Finance, Tally,
+                        Master in Basic Excel. Let me help you achieve your goals with my skills and expertise.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">Hire Me</a>
+                        <a href="#resume" class="btn btn-outline">My Resume</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/hrvanshjaiswal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/vanshSM28" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.naukri.com/mnjuser/profile?id=&altresid" target="_blank"><i
+                                class="fas fa-briefcase"></i></a>
+                        <a href="mr.vanshjaiswal008@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+
+                    </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <p>Get To Know More</p>
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://uploads.onecompiler.io/42m9esecm/43pjmbupq/PICC.png"
+                        alt="Professional portrait of [Your Name] wearing formal attire with a confident smile" />
+                </div>
+                <div class="about-text">
+                    <h3>Professional Student</h3>
+                    <div class="personal-info">
+                        <div class="personal-info-item">
+                            <i class="fas fa-user"></i>
+                            <span><strong>Name:</strong> Vansh Jaiswal</span>
+                        </div>
+                        <div class="personal-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong> mr.vanshjaiswal008@gmail.com</span>
+                        </div>
+                        <div class="personal-info-item">
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Phone:</strong> +91 8960416293</span>
+                        </div>
+                        <div class="personal-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Location:</strong> Unnao Uttar Pardesh, India</span>
+                        </div>
+                        <div class="personal-info-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span><strong>LinkedIn:</strong> Mr.Vansh Jaiswal</span>
+                        </div>
+                        <div class="personal-info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span><strong>Naukri:</strong> Mr.Vansh Jaiswal</span>
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h3> Skills</h3>
+                        <p style="color:var(--gray-medium);margin:8px 0 16px;max-width:720px;">
+                        <div
+                            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:start;">
+                            <!-- Skill Card Template -->
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='95%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Strategic Planning</h4>
+                                    <span
+                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Long-term
+                                    planning, prioritization and KPI alignment.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='92%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Leadership</h4>
+                                    <span
+                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Team motivation,
+                                    delegation and performance coaching.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='90%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Communication</h4>
+                                    <span
+                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Stakeholder
+                                    updates, presentations and negotiation clarity.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='85%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Negotiation & Conflict Resolution</h4>
+                                    <span
+                                        style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Vendor &
+                                    stakeholder negotiation with focus on win-win outcomes.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='89%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Team Management</h4>
+                                    <span
+                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Work allocation,
+                                    coaching and conflict resolution.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='94%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Project Management</h4>
+                                    <span
+                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Planning,
+                                    scheduling, risk and delivery ownership.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='82%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Financial Analysis</h4>
+                                    <span
+                                        style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Budgeting, P&L
+                                    basics and simple forecasting for projects.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='88%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">HR Management</h4>
+                                    <span
+                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Recruitment,
+                                    onboarding, engagement and basic labour compliance.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='91%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Advanced Excel & Tally</h4>
+                                    <span
+                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Pivot tables,
+                                    formulas, reporting and basic Tally operations.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='87%';"
+                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                    <h4 style="margin:0;font-size:1rem;">Operations Management</h4>
+                                    <span
+                                        style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
+                                </div>
+                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Process
+                                    improvements, logistics and day-to-day ops leadership.</p>
+                                <div
+                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                    <div class="skill-progress"
+                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="section" id="resume">
+        <div class="container">
+            <div class="section-title">
+                <p>My Qualifications in</p>
+                <h2> Education & Experience </h2>
+            </div>
+
+            <div class="resume-container">
+                <div class="resume-col">
+                    <h3 class="resume-col-title">Education</h3>
+
+
+                    <div style="margin-top:30px;">
+                        <div
+                            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:start;">
+
+                            <div
+                                style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                                <h4 style="margin:0 0 8px;font-size:1rem;">Bachelor's of Business Administration</h4>
+                                <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Chatrapati Sahuji Maharaj
+                                    University — July 2023 - Present</div>
+                                <a href="https://csjmu.ac.in/" target="_blank" rel="noopener"
+                                    style="color:var(--primary-color);font-weight:600">Visit University Website</a>
+                            </div>
+
+                            <div
+                                style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                                <h4 style="margin:0 0 8px;font-size:1rem;">Intermediate (PCM)</h4>
+                                <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Guru nanak Public Inter
+                                    College — July 2022 - July 2023</div>
+                                <a href="http://www.gurunanakpublicschoolunnao.in/" target="_blank" rel="noopener"
+                                    style="color:var(--primary-color);font-weight:600">Visit School Website</a>
+                            </div>
+
+                            <div
+                                style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                                <h4 style="margin:0 0 8px;font-size:1rem;">High School</h4>
+                                <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Master Mind Public High
+                                    School — July 2020 - July 2021</div>
+                                <a href="http://www.mastermindschoolunnao.com/" target="_blank" rel="noopener"
+                                    style="color:var(--primary-color);font-weight:600">Visit School Website</a>
+                            </div>
+
+                            <div
+                                style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                                <h4 style="margin:0 0 8px;font-size:1rem;">3rd - 9th Standard</h4>
+                                <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Master Mind Public High
+                                    School — July 2013 - July 2020</div>
+                                <a href="http://www.mastermindschoolunnao.com/" target="_blank" rel="noopener"
+                                    style="color:var(--primary-color);font-weight:600">Visit School Website</a>
+                            </div>
+
+                            <div
+                                style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                                <h4 style="margin:0 0 8px;font-size:1rem;">1st & 2nd Standard</h4>
+                                <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Vidhya Mandir Sishu Sadan
+                                    Inter College — July 2011 - July 2012</div>
+                                <a href="http://www.vmssunnao.edu.in/" target="_blank" rel="noopener"
+                                    style="color:var(--primary-color);font-weight:600">Visit School Website</a>
+                            </div>
+                        </div>
+
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <section class="section" id="re6sume">
+                                    <div class="container">
+                                        <div class="section-title">
+                                            <p>My Experience in</p>
+                                            <h2> Experience </h2>
+                                        </div>
+
+                                        <!-- Experience grid (cards similar to certificates) -->
+                                        <div style="margin-top:30px;">
+                                            <div
+                                                style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:start;">
+
+                                                <!-- Card template -->
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Hub Assistant</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Ekart
+                                                        / Flipkart — May 2023 - Jul 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Managed last-mile pickups, pending shipments and CV clearances
+                                                        across Flipkart marketplaces. Improved daily throughput by
+                                                        streamlining pickup routing.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.flipkart.com" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-1"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-1" type="file" style="display:none" />
+                                                        <label for="cert-1"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-1" type="file" style="display:none" />
+                                                        <a href="#" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #9ca3af;color:#6b7280;text-decoration:none;font-weight:600;">View
+                                                            (if provided)</a>
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Senior HR Manager Intern
+                                                    </h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">TEN:
+                                                        Marketing Consultancy — Sep 2024 - Jul 2025</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">Led HR
+                                                        initiatives, coordinated recruitment and onboarding for client
+                                                        projects, and managed a small HR team.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="#" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-2"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-2" type="file" style="display:none" />
+                                                        <label for="cert-2"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-2" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Operations Intern</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Amazon India — Jan 2024 - Apr 2024</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Assisted operations team with shipment reconciliation and vendor
+                                                        coordination for marketplace sellers.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.amazon.in" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-3"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-3" type="file" style="display:none" />
+                                                        <label for="cert-3"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-3" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Recruitment Intern</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">TCS —
+                                                        Jun 2023 - Aug 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Supported talent sourcing and screening processes for campus
+                                                        hiring drives.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.tcs.com" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-4"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-4" type="file" style="display:none" />
+                                                        <label for="cert-4"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-4" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Logistics Coordinator
+                                                    </h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Delhivery — Mar 2023 - Jun 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Coordinated dispatch schedules, tracking and exception handling
+                                                        for regional hubs.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.delhivery.com" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-5"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-5" type="file" style="display:none" />
+                                                        <label for="cert-5"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-5" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Management Trainee</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Aditya Birla Group — Jul 2022 - Dec 2022</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Rotational program across operations and HR, focusing on process
+                                                        improvement and reporting.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.adityabirla.com" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-6"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-6" type="file" style="display:none" />
+                                                        <label for="cert-6"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-6" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">HR Executive (Intern)
+                                                    </h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        HCLTech — Feb 2024 - May 2024</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Handled employee records, attendance systems and assisted in
+                                                        payroll coordination.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.hcltech.com" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-7"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-7" type="file" style="display:none" />
+                                                        <label for="cert-7"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-7" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Project Coordinator</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Deloitte — Nov 2023 - Feb 2024</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Assisted in project logistics, stakeholder communication and
+                                                        timely deliverables for internal programs.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www2.deloitte.com" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-8"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-8" type="file" style="display:none" />
+                                                        <label for="cert-8"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-8" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Business Analyst Intern
+                                                    </h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">IBM —
+                                                        Apr 2023 - Jul 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Conducted data-driven analyses and prepared reports for
+                                                        management decision-making.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.ibm.com" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-9"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-9" type="file" style="display:none" />
+                                                        <label for="cert-9"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-9" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Customer Success Intern
+                                                    </h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Microsoft India — Sep 2023 - Dec 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">Worked
+                                                        on client onboarding, issue resolution and improving
+                                                        satisfaction metrics.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.microsoft.com" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-10"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-10" type="file" style="display:none" />
+                                                        <label for="cert-10"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-10" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Sales Intern</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Infosys — Jan 2023 - Apr 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Supported sales ops and prepared client proposals and
+                                                        presentations.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.infosys.com" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-11"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-11" type="file" style="display:none" />
+                                                        <label for="cert-11"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-11" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">HR Intern</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Wipro
+                                                        — May 2023 - Aug 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Assisted in talent engagement and training coordination for
+                                                        campus hires.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.wipro.com" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-12"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-12" type="file" style="display:none" />
+                                                        <label for="cert-12"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-12" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Operations Lead</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Blue
+                                                        Dart — Aug 2022 - Nov 2022</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">Led
+                                                        small teams for regional dispatches and addressed SLA exceptions
+                                                        to improve on-time delivery.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.bluedart.com" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-13"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-13" type="file" style="display:none" />
+                                                        <label for="cert-13"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-13" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Store Supervisor</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Future Retail (Big Bazaar) — Jun 2021 - Dec 2021</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Supervised store operations, inventory checks and helped
+                                                        implement merchandising strategies.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.futureretail.in" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-14"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-14" type="file" style="display:none" />
+                                                        <label for="cert-14"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-14" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Assistant Manager
+                                                        (Intern)</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Myntra — Feb 2024 - Apr 2024</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
+                                                        Supported category operations, vendor relations and returns
+                                                        processing to improve fulfillment accuracy.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.myntra.com" target="_blank" rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-15"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-15" type="file" style="display:none" />
+                                                        <label for="cert-15"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-15" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                                                    onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+                                                    onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Operations Intern</h4>
+                                                    <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
+                                                        Accenture — May 2023 - Aug 2023</div>
+                                                    <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">Worked
+                                                        on operational excellence initiatives and process documentation
+                                                        for client deliveries.</p>
+                                                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                                        <a href="https://www.accenture.com" target="_blank"
+                                                            rel="noopener"
+                                                            style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
+                                                            Website</a>
+                                                        <label for="offer-16"
+                                                            style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">Upload
+                                                            Offer Letter</label>
+                                                        <input id="offer-16" type="file" style="display:none" />
+                                                        <label for="cert-16"
+                                                            style="padding:8px 12px;border-radius:8px;background:#f0fdf4;color:#065f46;cursor:pointer;font-weight:600;">Upload
+                                                            Certificate</label>
+                                                        <input id="cert-16" type="file" style="display:none" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- note and CTA -->
+                                            <div style="margin-top:18px;color:#6b7280;font-size:.95rem;">
+                                                <p style="margin:0 0 8px;">Tip: Use the "Upload Offer Letter" and
+                                                    "Upload Certificate" buttons on each card to attach proof from the
+                                                    company. Uploaded files will be available for review.</p>
+                                                <p style="margin:0;">If you want, replace the placeholder '#' View links
+                                                    with direct URLs to offer-letter/certificate PDFs hosted on your
+                                                    drive or company portals.</p>
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 50px;">
+                            <a href="https://drive.google.com/file/d/1L_REocsqfsCKGxPn-RIHfJr4LEFgw3-B/view?usp=drive_link"
+                                class="btn btn-primary" download>Download Resume</a>
+                        </div>
+                    </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <p>Get In Touch</p>
+                <h2>Contact Me</h2>
+            </div>
+
+            <style>
+                /* Local contact-section styles + subtle animations */
+                .contact-cards-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 18px;
+                    margin-top: 18px;
+                    align-items: start;
+                }
+
+                @media (max-width: 992px) {
+                    .contact-cards-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 600px) {
+                    .contact-cards-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                .contact-box {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 12px;
+                    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+                    transition: transform .35s cubic-bezier(.2, .9, .2, 1), box-shadow .35s;
+                    overflow: hidden;
+                    position: relative;
+                    will-change: transform;
+                }
+
+                .contact-box:hover {
+                    transform: translateY(-10px) scale(1.02);
+                    box-shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+                }
+
+                .contact-box h4 {
+                    margin: 0 0 8px;
+                    color: var(--dark-color);
+                }
+
+                .contact-box p {
+                    color: var(--gray-medium);
+                    margin: 0 0 12px;
+                }
+
+                .mini-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    margin-top: 8px;
+                }
+
+                .mini-list a,
+                .mini-list button {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 8px 12px;
+                    border-radius: 10px;
+                    border: 1px solid rgba(59, 130, 246, 0.12);
+                    text-decoration: none;
+                    color: var(--text-color);
+                    background: transparent;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background .2s, transform .18s;
+                }
+
+                .mini-list a:hover,
+                .mini-list button:hover {
+                    background: rgba(59, 130, 246, 0.06);
+                    transform: translateY(-3px);
+                }
+
+                /* CTA button pulse */
+                .btn-cta {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 16px;
+                    border-radius: 10px;
+                    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+                    color: #fff;
+                    font-weight: 700;
+                    border: none;
+                    cursor: pointer;
+                    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.18);
+                    animation: pulse 3s infinite;
+                }
+
+                @keyframes pulse {
+                    0% {
+                        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.18);
+                        transform: translateY(0);
+                    }
+
+                    50% {
+                        box-shadow: 0 18px 36px rgba(59, 130, 246, 0.12);
+                        transform: translateY(-3px);
+                    }
+
+                    100% {
+                        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.18);
+                        transform: translateY(0);
+                    }
+                }
+
+                /* Simple floating input effect */
+                .floating-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                .floating-form input,
+                .floating-form textarea {
+                    width: 100%;
+                    padding: 12px 14px;
+                    border-radius: 8px;
+                    border: 1px solid var(--gray-light);
+                    transition: box-shadow .18s, border-color .18s;
+                }
+
+                .floating-form input:focus,
+                .floating-form textarea:focus {
+                    border-color: var(--primary-color);
+                    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.08);
+                    outline: none;
+                }
+
+                /* subtle entrance */
+                .animate-in {
+                    opacity: 0;
+                    transform: translateY(12px);
+                    animation: inUp .6s forwards;
+                }
+
+                .animate-in.delay-1 {
+                    animation-delay: .08s;
+                }
+
+                .animate-in.delay-2 {
+                    animation-delay: .16s;
+                }
+
+                @keyframes inUp {
+                    to {
+                        opacity: 1;
+                        transform: none;
+                    }
+                }
+
+                .note-small {
+                    font-size: .9rem;
+                    color: var(--gray-medium);
+                    margin-top: 10px;
+                }
+
+                .success-badge {
+                    display: none;
+                    padding: 8px 10px;
+                    background: #ecfdf5;
+                    color: #065f46;
+                    border-radius: 8px;
+                    font-weight: 700;
+                    margin-top: 8px;
+                }
+            </style>
+
+            <div class="contact-cards-grid">
+                <!-- Box 1: Quick Connect -->
+                <div class="contact-box animate-in delay-1" aria-label="Quick contact">
+                    <h4>Quick Connect</h4>
+                    <p>Choose a fast way to reach out — email, phone, or LinkedIn. I typically respond within 24 hours.
+                    </p>
+                    <div class="mini-list">
+                        <a href="mailto:mr.vanshjaiswal008@gmail.com"><i class="fas fa-envelope"
+                                style="color:var(--primary-color);width:18px"></i> Email:
+                            mr.vanshjaiswal008@gmail.com</a>
+                        <a href="tel:+918960416293"><i class="fas fa-phone"
+                                style="color:var(--primary-color);width:18px"></i> Call: +91 8960416293</a>
+                        <a href="https://www.linkedin.com/in/hrvanshjaiswal" target="_blank"><i class="fab fa-linkedin"
+                                style="color:var(--primary-color);width:18px"></i> LinkedIn</a>
+                        <a href="https://maps.app.goo.gl/ReGF5rCm7RywnmU58" target="_blank"><i
+                                class="fas fa-map-marker-alt" style="color:var(--primary-color);width:18px"></i> View
+                            location</a>
+                    </div>
+                </div>
+
+                <!-- Box 2: Message Form -->
+                <div class="contact-box animate-in delay-2" aria-label="Contact form">
+                    <h4>Send a Message</h4>
+                    <p>Short message works best — tell me your goal, timeline, and budget (if any).</p>
+                    <form id="quickContactForm" class="floating-form"
+                        onsubmit="event.preventDefault(); quickContactSubmit();">
+                        <input type="text" id="qc-name" name="name" placeholder="Your name" required />
+                        <input type="email" id="qc-email" name="email" placeholder="Your email" required />
+                        <textarea id="qc-message" name="message" placeholder="Short message..." required></textarea>
+                        <button type="submit" class="btn-cta" aria-label="Send message">
+                            <i class="fas fa-paper-plane" style="width:14px"></i> Send Message
+                        </button>
+                        <div id="qc-success" class="success-badge">Message ready to be sent — thank you!</div>
+                        <div class="note-small">Note: This demo form shows a success message. Integrate with your
+                            backend or email service to receive messages.</div>
+                    </form>
+                </div>
+
+                <!-- Box 3: Availability & Actions -->
+                <div class="contact-box animate-in" aria-label="Availability and quick actions">
+                    <h4>Availability & Quick Actions</h4>
+                    <p>Open to internships, freelance projects and part-time collaboration. Pick an immediate action
+                        below.</p>
+
+                    <div class="mini-list">
+                        <a href="https://drive.google.com/file/d/1L_REocsqfsCKGxPn-RIHfJr4LEFgw3-B/view?usp=drive_link"
+                            target="_blank"><i class="fas fa-file-download"
+                                style="color:var(--primary-color);width:16px"></i> Download Resume</a>
+                        <a href="tel:+918960416293"><i class="fas fa-phone"
+                                style="color:var(--primary-color);width:16px"></i> Schedule a Call</a>
+                        <a href="https://wa.me/918960416293" target="_blank"><i class="fab fa-whatsapp"
+                                style="color:#25D366;width:16px"></i> WhatsApp Message</a>
+                        <a href="mr.vanshjaiswal008@gmail.com"><i class="fas fa-envelope-open"
+                                style="color:var(--primary-color);width:16px"></i> Request Interview</a>
+                    </div>
+
+                    <div style="margin-top:14px;display:flex;gap:10px;align-items:center;">
+                        <button onclick="window.location.hash='#resume'" class="btn btn-outline"
+                            style="padding:10px 12px;border-radius:8px;">View Certificates</button>
+                        <button onclick="document.getElementById('qc-name').focus();" class="btn btn-primary"
+                            style="padding:10px 12px;border-radius:8px;">Quick Message</button>
+                    </div>
+
+                    <div class="note-small" style="margin-top:12px;">
+                        Tip: Use "Download Resume" to get an offline copy. For urgent requests, call or WhatsApp
+                        directly.
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Simple demo handler for the inline contact form — replace with real integration
+                function quickContactSubmit() {
+                    const successEl = document.getElementById('qc-success');
+                    successEl.style.display = 'inline-block';
+                    successEl.style.opacity = 0;
+                    successEl.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 360, fill: 'forwards' });
+                    // mimic send and clear inputs after a short delay
+                    setTimeout(() => {
+                        document.getElementById('qc-name').value = '';
+                        document.getElementById('qc-email').value = '';
+                        document.getElementById('qc-message').value = '';
+                    }, 700);
+                }
+            </script>
+        </div>
+        </div>
+    </section>
+    <!-- Resume Section -->
+    <section class="section" id="re5sume">
+        <div class="container">
+            <div class="section-title">
+                <p>My Qualifications</p>
+                <h2>Certificate </h2>
+                <link rel="stylesheet" href="styles.css">
+            </div>
+            <div style="margin-top:30px;">
+                <div
+                    style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:start;">
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Google IT Support Professional Certificate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Google — Aug 2024</div>
+                        <a href="https://grow.google/certificates/it-support/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Google Data Analytics Professional Certificate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Google — May 2024</div>
+                        <a href="https://grow.google/certificates/data-analytics/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Google Project Management Professional Certificate
+                        </h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Google — Mar 2024</div>
+                        <a href="https://grow.google/certificates/project-management/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Google UX Design Professional Certificate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Google — Jan 2024</div>
+                        <a href="https://grow.google/certificates/ux-design/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Microsoft Certified: Azure Fundamentals</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Microsoft — Sep 2023</div>
+                        <a href="https://learn.microsoft.com/en-us/certifications/azure-fundamentals/" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Microsoft Power Platform Fundamentals</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Microsoft — Nov 2023</div>
+                        <a href="https://learn.microsoft.com/en-us/certifications/power-platform-fundamentals/"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Microsoft Data Analyst Associate (Power BI)</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Microsoft — Feb 2024</div>
+                        <a href="https://learn.microsoft.com/en-us/certifications/data-analyst-associate/"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">AWS Certified Cloud Practitioner</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Amazon Web Services — Jul 2023
+                        </div>
+                        <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">AWS Certified Solutions Architect – Associate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Amazon Web Services — Oct 2023
+                        </div>
+                        <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">AWS Certified Developer – Associate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Amazon Web Services — Dec 2023
+                        </div>
+                        <a href="https://aws.amazon.com/certification/certified-developer-associate/" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">AWS Certified Machine Learning – Specialty</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Amazon Web Services — Apr 2024
+                        </div>
+                        <a href="https://aws.amazon.com/certification/certified-machine-learning-specialty/"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">IBM Professional Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">IBM — Jun 2022</div>
+                        <a href="https://www.ibm.com/certify" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View IBM Certifications</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Cisco CCNA</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Cisco — Aug 2022</div>
+                        <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Cisco CCNP Enterprise</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Cisco — Nov 2022</div>
+                        <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/professional/ccnp-enterprise.html"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Oracle Certification Hub</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Oracle — May 2022</div>
+                        <a href="https://education.oracle.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Oracle Certifications</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Salesforce Administrator</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Salesforce — Jun 2023</div>
+                        <a href="https://trailhead.salesforce.com/credentials/administrator" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Salesforce Platform Developer I</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Salesforce — Sep 2023</div>
+                        <a href="https://trailhead.salesforce.com/credentials/platformdeveloperI" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Adobe Certified Professional</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Adobe — Apr 2023</div>
+                        <a href="https://learning.adobe.com/certification.html" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">SAP Certified Associate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">SAP — Jul 2022</div>
+                        <a href="https://training.sap.com/certification/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Tableau Desktop Specialist</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Tableau — Oct 2023</div>
+                        <a href="https://www.tableau.com/support/certification" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Splunk Core Certified User</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Splunk — Feb 2024</div>
+                        <a href="https://www.splunk.com/en_us/training/certification.html" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Red Hat Certified System Administrator (RHCSA)</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Red Hat — Jun 2023</div>
+                        <a href="https://www.redhat.com/en/services/training-and-certification" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">VMware Certified Professional (VCP)</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">VMware — Aug 2023</div>
+                        <a href="https://www.vmware.com/education-services/certification.html" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Palo Alto Networks Certification</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Palo Alto Networks — Mar 2024
+                        </div>
+                        <a href="https://www.paloaltonetworks.com/services/education/certification" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Fortinet NSE Certification</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Fortinet — Nov 2023</div>
+                        <a href="https://www.fortinet.com/support-and-training/training/certification" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Juniper Networks Certification Program</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Juniper — Jul 2022</div>
+                        <a href="https://www.juniper.net/us/en/training/certification/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">PMI: CAPM (Certified Associate in Project Management)
+                        </h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">PMI — Jan 2024</div>
+                        <a href="https://www.pmi.org/certifications/certified-associate-capm" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">PMI: PMP (Project Management Professional)</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">PMI — Sep 2023</div>
+                        <a href="https://www.pmi.org/certifications/project-management-pmp" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">HubSpot Inbound Certification</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">HubSpot — May 2023</div>
+                        <a href="https://academy.hubspot.com/courses/inbound" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">HubSpot Content Marketing</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">HubSpot — Jul 2023</div>
+                        <a href="https://academy.hubspot.com/courses/content-marketing" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">LinkedIn Learning Completion Certificates</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">LinkedIn — Multiple Dates</div>
+                        <a href="https://www.linkedin.com/learning/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View LinkedIn Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Coursera Professional Certificates (partnered with
+                            MNCs)</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Coursera — Ongoing</div>
+                        <a href="https://www.coursera.org/professional-certificates" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificates</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">edX Professional Certificates</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">edX — Ongoing</div>
+                        <a href="https://www.edx.org/professional-certificate" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificates</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Accenture Skills & Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Accenture — Dec 2022</div>
+                        <a href="https://www.accenture.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Accenture Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Deloitte Learning & Certification</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Deloitte — Apr 2023</div>
+                        <a href="https://www2.deloitte.com/global/en/pages/careers/articles/careers-why-join-deloitte.html"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Deloitte Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">PwC Digital & Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">PwC — Jun 2023</div>
+                        <a href="https://www.pwc.com/gx/en/services/people.html" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View PwC Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">KPMG Learning & Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">KPMG — May 2023</div>
+                        <a href="https://home.kpmg/xx/en/home/services.html" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View KPMG Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">EY Learning & Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">EY — Feb 2024</div>
+                        <a href="https://www.ey.com/en_gl" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View EY Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Capgemini Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Capgemini — Mar 2022</div>
+                        <a href="https://www.capgemini.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Capgemini Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Infosys Certification Programs</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Infosys — Sep 2022</div>
+                        <a href="https://www.infosys.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Infosys Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Wipro Learning & Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Wipro — Jan 2023</div>
+                        <a href="https://www.wipro.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Wipro Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">TCS Certification & Learning</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">TCS — Nov 2022</div>
+                        <a href="https://www.tcs.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View TCS Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Cognizant Professional Certificates</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Cognizant — Jun 2022</div>
+                        <a href="https://www.cognizant.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Cognizant Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">HCLTech Learning</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">HCL — Apr 2022</div>
+                        <a href="https://www.hcltech.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View HCL Learning</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Zoho Certification & Academy</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Zoho — Jul 2023</div>
+                        <a href="https://www.zoho.com/academy/certification.html" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Atlassian University & Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Atlassian — Oct 2023</div>
+                        <a href="https://www.atlassian.com/university/certification" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">GitHub Training & Certification</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">GitHub — Mar 2023</div>
+                        <a href="https://training.github.com/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View GitHub Training</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Intel Professional Certifications & Training</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Intel — Aug 2022</div>
+                        <a href="https://www.intel.com/content/www/us/en/education/certification.html" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Intel
+                            Certifications</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">NVIDIA Deep Learning Institute</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">NVIDIA — Jun 2024</div>
+                        <a href="https://www.nvidia.com/en-us/deep-learning-ai/education/" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">SAS Certification</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">SAS — Dec 2022</div>
+                        <a href="https://www.sas.com/en_us/certification.html" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">MongoDB University Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">MongoDB — Feb 2023</div>
+                        <a href="https://university.mongodb.com/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Elastic Training & Certification</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Elastic — Apr 2023</div>
+                        <a href="https://www.elastic.co/training/certification" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Tableau Certified Associate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Tableau — Jan 2024</div>
+                        <a href="https://www.tableau.com/support/certification" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Splunk Enterprise Certified Admin</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Splunk — Jul 2023</div>
+                        <a href="https://www.splunk.com/en_us/training/certification.html" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Cisco CyberOps Associate</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Cisco — May 2023</div>
+                        <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/cyberops-associate.html"
+                            target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600">View
+                            Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Red Hat Certified Engineer (RHCE)</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Red Hat — Nov 2023</div>
+                        <a href="https://www.redhat.com/en/services/training-and-certification" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">VMware vSphere Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">VMware — Dec 2023</div>
+                        <a href="https://www.vmware.com/education-services/certification.html" target="_blank"
+                            rel="noopener" style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Microsoft Azure Data Fundamentals</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Microsoft — Aug 2023</div>
+                        <a href="https://learn.microsoft.com/en-us/certifications/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Microsoft Certifications</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Adobe Certified Expert (ACE)</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Adobe — Feb 2024</div>
+                        <a href="https://learning.adobe.com/certification.html" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Oracle Cloud Infrastructure Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Oracle — Sep 2023</div>
+                        <a href="https://education.oracle.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Google Cloud Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Google Cloud — Jun 2024</div>
+                        <a href="https://cloud.google.com/certification" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Salesforce Marketing Cloud Certifications</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Salesforce — May 2024</div>
+                        <a href="https://trailhead.salesforce.com" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Atlassian Certified Jira Administrator</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Atlassian — Oct 2022</div>
+                        <a href="https://www.atlassian.com/university/certification" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">MongoDB Certified DBA</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">MongoDB — Jan 2023</div>
+                        <a href="https://university.mongodb.com/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">Elastic Certified Engineer</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">Elastic — Aug 2023</div>
+                        <a href="https://www.elastic.co/training/certification" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+
+                    <div
+                        style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                        <h4 style="margin:0 0 8px;font-size:1rem;">GitHub Certified: GitHub Actions</h4>
+                        <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">GitHub — Apr 2023</div>
+                        <a href="https://training.github.com/" target="_blank" rel="noopener"
+                            style="color:var(--primary-color);font-weight:600">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <div>
+
+            </form>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Vansh Jaiswal</h3>
+                    <p>A passionate professional dedicated to delivering exceptional results through expertise in
+                        Management. Available for freelance projects and full-time opportunities.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/hrvanshjaiswal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/shushant0088?t=icb0kTSXwWvSdP3qRo-PkQ&s=09" target="_blank"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/share/157grLai1hM/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="#resume"><i class="fas fa-chevron-right"></i> Resume</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Unnao Uttar Pardesh</a></li>
+                        <li><a href="mailto:your.email@gmail.com"><i class="fas fa-envelope"></i>
+                                mr.vanshjaiswal008@gmail.com</a></li>
+                        <li><a href="tel:+918960416293"><i class="fas fa-phone"></i>8960416293</a></li>
+                        <li><a href="https://www.linkedin.com/in/hrvanshjaiswal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a></li>
+                        <li><a href="[Your Naukri Profile URL]" target="_blank"><i class="fas fa-briefcase"></i> Naukri
+                                Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Vansh Jaiswal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
