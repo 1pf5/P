@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr.Vansh Jaiswal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
         :root {
             --primary-color: #3b82f6;
@@ -989,6 +990,9 @@
 
 
 
+
+
+
                     </pre>
                     <h1>Hi, I'm <span>Vansh Jaiswal</span></h1>
                     <h2>[Management Student]</h2>
@@ -1017,235 +1021,231 @@
                 <p>Get To Know More</p>
                 <h2>About Me</h2>
             </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://uploads.onecompiler.io/42m9esecm/43pjmbupq/PICC.png"
-                        alt="Professional portrait of [Your Name] wearing formal attire with a confident smile" />
+
+            <div class="about-text">
+                <h3>Professional Student</h3>
+                <div class="personal-info">
+                    <div class="personal-info-item">
+                        <i class="fas fa-user"></i>
+                        <span><strong>Name:</strong> Vansh Jaiswal</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><strong>Email:</strong> mr.vanshjaiswal008@gmail.com</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <i class="fas fa-phone"></i>
+                        <span><strong>Phone:</strong> +91 8960416293</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span><strong>Location:</strong> Unnao Uttar Pardesh, India</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span><strong>LinkedIn:</strong> Mr.Vansh Jaiswal</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span><strong>Naukri:</strong> Mr.Vansh Jaiswal</span>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h3>Professional Student</h3>
-                    <div class="personal-info">
-                        <div class="personal-info-item">
-                            <i class="fas fa-user"></i>
-                            <span><strong>Name:</strong> Vansh Jaiswal</span>
+
+                <div class="skills">
+                    <h3> Skills</h3>
+                    <p style="color:var(--gray-medium);margin:8px 0 16px;max-width:720px;">
+                    <div
+                        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:start;">
+                        <!-- Skill Card Template -->
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='95%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Strategic Planning</h4>
+                                <span
+                                    style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Long-term
+                                planning, prioritization and KPI alignment.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                </div>
+                            </div>
                         </div>
-                        <div class="personal-info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span><strong>Email:</strong> mr.vanshjaiswal008@gmail.com</span>
+
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='92%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Leadership</h4>
+                                <span
+                                    style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Team motivation,
+                                delegation and performance coaching.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                </div>
+                            </div>
                         </div>
-                        <div class="personal-info-item">
-                            <i class="fas fa-phone"></i>
-                            <span><strong>Phone:</strong> +91 8960416293</span>
+
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='90%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Communication</h4>
+                                <span
+                                    style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Stakeholder
+                                updates, presentations and negotiation clarity.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                </div>
+                            </div>
                         </div>
-                        <div class="personal-info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span><strong>Location:</strong> Unnao Uttar Pardesh, India</span>
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='85%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Negotiation & Conflict Resolution</h4>
+                                <span
+                                    style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Vendor &
+                                stakeholder negotiation with focus on win-win outcomes.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                </div>
+                            </div>
                         </div>
-                        <div class="personal-info-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span><strong>LinkedIn:</strong> Mr.Vansh Jaiswal</span>
+
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='89%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Team Management</h4>
+                                <span
+                                    style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Work allocation,
+                                coaching and conflict resolution.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                </div>
+                            </div>
                         </div>
-                        <div class="personal-info-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span><strong>Naukri:</strong> Mr.Vansh Jaiswal</span>
+
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='94%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Project Management</h4>
+                                <span
+                                    style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Planning,
+                                scheduling, risk and delivery ownership.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='82%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Financial Analysis</h4>
+                                <span
+                                    style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Budgeting, P&L
+                                basics and simple forecasting for projects.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="skills">
-                        <h3> Skills</h3>
-                        <p style="color:var(--gray-medium);margin:8px 0 16px;max-width:720px;">
-                        <div
-                            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:start;">
-                            <!-- Skill Card Template -->
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='95%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Strategic Planning</h4>
-                                    <span
-                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Long-term
-                                    planning, prioritization and KPI alignment.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='88%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">HR Management</h4>
+                                <span
+                                    style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Recruitment,
+                                onboarding, engagement and basic labour compliance.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
                                 </div>
                             </div>
+                        </div>
 
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='92%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Leadership</h4>
-                                    <span
-                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Team motivation,
-                                    delegation and performance coaching.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='91%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Advanced Excel & Tally</h4>
+                                <span
+                                    style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
+                            </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Pivot tables,
+                                formulas, reporting and basic Tally operations.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
                                 </div>
                             </div>
+                        </div>
 
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='90%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Communication</h4>
-                                    <span
-                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Stakeholder
-                                    updates, presentations and negotiation clarity.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
-                                </div>
+                        <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
+                            onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='87%';"
+                            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                                <h4 style="margin:0;font-size:1rem;">Operations Management</h4>
+                                <span
+                                    style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
                             </div>
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='85%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Negotiation & Conflict Resolution</h4>
-                                    <span
-                                        style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Vendor &
-                                    stakeholder negotiation with focus on win-win outcomes.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='89%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Team Management</h4>
-                                    <span
-                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Work allocation,
-                                    coaching and conflict resolution.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='94%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Project Management</h4>
-                                    <span
-                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Planning,
-                                    scheduling, risk and delivery ownership.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='82%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Financial Analysis</h4>
-                                    <span
-                                        style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Budgeting, P&L
-                                    basics and simple forecasting for projects.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='88%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">HR Management</h4>
-                                    <span
-                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Recruitment,
-                                    onboarding, engagement and basic labour compliance.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='91%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Advanced Excel & Tally</h4>
-                                    <span
-                                        style="background:#0b84f5;color:#fbfbfb;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Excellent</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Pivot tables,
-                                    formulas, reporting and basic Tally operations.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
-                                onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';this.querySelector('.skill-progress').style.width='87%';"
-                                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';this.querySelector('.skill-progress').style.width='6%';">
-                                <div
-                                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                    <h4 style="margin:0;font-size:1rem;">Operations Management</h4>
-                                    <span
-                                        style="background:#f59e0b;color:#78350f;padding:6px 8px;border-radius:999px;font-weight:700;font-size:.85rem;">Good</span>
-                                </div>
-                                <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Process
-                                    improvements, logistics and day-to-day ops leadership.</p>
-                                <div
-                                    style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
-                                    <div class="skill-progress"
-                                        style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
-                                    </div>
+                            <p style="color:var(--gray-medium);font-size:.95rem;margin:0 0 12px;">Process
+                                improvements, logistics and day-to-day ops leadership.</p>
+                            <div
+                                style="height:10px;background:rgba(59,130,246,0.08);border-radius:8px;overflow:hidden;">
+                                <div class="skill-progress"
+                                    style="width:6%;height:100%;background:var(--primary-color);border-radius:8px;transition:width .8s cubic-bezier(.2,.9,.2,1);">
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
     </section>
 
     <!-- Resume Section -->
@@ -1383,17 +1383,20 @@
                                                 <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
                                                     onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
                                                     onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
-                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Operations Intern</h4>
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">HR Team Leader Intern
+                                                    </h4>
                                                     <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">
-                                                        Amazon India — Jan 2024 - Apr 2024</div>
+                                                        MJ Marketing Counsaultancy — Feb2025 - June 2025</div>
                                                     <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
                                                         Assisted operations team with shipment reconciliation and vendor
                                                         coordination for marketplace sellers.</p>
                                                     <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                                                        <a href="https://www.amazon.in" target="_blank" rel="noopener"
+                                                        <a href="https://in.linkedin.com/company/mj-marketing-consultancy"
+                                                            target="_blank" rel="noopener"
                                                             style="padding:8px 12px;border-radius:8px;border:1px solid #3b82f6;color:var(--primary-color);font-weight:600;text-decoration:none;">Company
                                                             Website</a>
-                                                        <label for="offer-3"
+                                                        <label for="offer-3" <a
+                                                            href="https://in.linkedin.com/in/hrvanshjaiswal?trk=people-guest_people_search-card"
                                                             style="padding:8px 12px;border-radius:8px;background:#eef2ff;color:#1e3a8a;cursor:pointer;font-weight:600;">
                                                             Offer Letter</label>
                                                         <input id="offer-3" type="file" style="display:none" />
@@ -1407,9 +1410,10 @@
                                                 <div style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:transform .35s ease,box-shadow .35s ease;"
                                                     onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
                                                     onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.06)';">
-                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Recruitment Intern</h4>
+                                                    <h4 style="margin:0 0 8px;font-size:1rem;">Digital Marketing Intern
+                                                    </h4>
                                                     <div style="color:#6b7280;font-size:.9rem;margin-bottom:10px;">TCS —
-                                                        Jun 2023 - Aug 2023</div>
+                                                        July 2025 - Aug 2025</div>
                                                     <p style="color:#374151;font-size:.95rem;margin-bottom:12px;">
                                                         Supported talent sourcing and screening processes for campus
                                                         hiring drives.</p>
@@ -1980,32 +1984,145 @@
                                 style="color:var(--primary-color);width:16px"></i> Request Interview</a>
                     </div>
 
-                    <div style="margin-top:14px;display:flex;gap:10px;align-items:center;">
+                    <div style="margin-top:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
                         <button onclick="window.location.hash='#resume'" class="btn btn-outline"
                             style="padding:10px 12px;border-radius:8px;">View Certificates</button>
                         <button onclick="document.getElementById('qc-name').focus();" class="btn btn-primary"
                             style="padding:10px 12px;border-radius:8px;">Quick Message</button>
+                        <button onclick="exportToExcel();" class="btn btn-primary"
+                            style="padding:10px 12px;border-radius:8px;background-color:#10b981;border-color:#10b981;">
+                            <i class="fas fa-file-excel" style="width:14px;margin-right:5px;"></i> Export to Excel
+                        </button>
                     </div>
 
                     <div class="note-small" style="margin-top:12px;">
+                        <div id="customer-count"
+                            style="padding:8px;background-color:#f0f9ff;border-radius:6px;font-size:0.85rem;color:#0369a1;">
+                            <i class="fas fa-database" style="margin-right:5px;"></i>
+                            <span id="customer-count-text">Loading...</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <script>
-                // Simple demo handler for the inline contact form — replace with real integration
+                // Initialize customer database in localStorage if it doesn't exist
+                function initCustomerDatabase() {
+                    if (!localStorage.getItem('customerDatabase')) {
+                        localStorage.setItem('customerDatabase', JSON.stringify([]));
+                    }
+                }
+
+                // Save customer data to database (localStorage)
+                function saveCustomerData(name, email, message) {
+                    initCustomerDatabase();
+                    const database = JSON.parse(localStorage.getItem('customerDatabase'));
+                    const customerData = {
+                        id: Date.now(), // Unique ID based on timestamp
+                        name: name,
+                        email: email,
+                        message: message,
+                        date: new Date().toISOString(),
+                        timestamp: new Date().toLocaleString()
+                    };
+                    database.push(customerData);
+                    localStorage.setItem('customerDatabase', JSON.stringify(database));
+                    return customerData;
+                }
+
+                // Get all customer data from database
+                function getAllCustomers() {
+                    initCustomerDatabase();
+                    return JSON.parse(localStorage.getItem('customerDatabase'));
+                }
+
+                // Export customer data to Excel
+                function exportToExcel() {
+                    const customers = getAllCustomers();
+                    if (customers.length === 0) {
+                        alert('No customer data available to export!');
+                        return;
+                    }
+
+                    // Prepare data for Excel
+                    const excelData = customers.map(customer => ({
+                        'ID': customer.id,
+                        'Name': customer.name,
+                        'Email': customer.email,
+                        'Message': customer.message,
+                        'Date': customer.timestamp
+                    }));
+
+                    // Create worksheet
+                    const ws = XLSX.utils.json_to_sheet(excelData);
+
+                    // Set column widths
+                    const colWidths = [
+                        { wch: 15 }, // ID
+                        { wch: 25 }, // Name
+                        { wch: 30 }, // Email
+                        { wch: 50 }, // Message
+                        { wch: 25 }  // Date
+                    ];
+                    ws['!cols'] = colWidths;
+
+                    // Create workbook
+                    const wb = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(wb, ws, 'Customers');
+
+                    // Generate filename with current date
+                    const date = new Date().toISOString().split('T')[0];
+                    const filename = `Customer_Database_${date}.xlsx`;
+
+                    // Download file
+                    XLSX.writeFile(wb, filename);
+
+                    alert(`Successfully exported ${customers.length} customer record(s) to Excel!`);
+                }
+
+                // Enhanced form submission handler
                 function quickContactSubmit() {
+                    const name = document.getElementById('qc-name').value.trim();
+                    const email = document.getElementById('qc-email').value.trim();
+                    const message = document.getElementById('qc-message').value.trim();
+
+                    if (!name || !email || !message) {
+                        alert('Please fill in all fields!');
+                        return;
+                    }
+
+                    // Save customer data to database
+                    saveCustomerData(name, email, message);
+
+                    // Update customer count
+                    updateCustomerCount();
+
+                    // Show success message
                     const successEl = document.getElementById('qc-success');
                     successEl.style.display = 'inline-block';
                     successEl.style.opacity = 0;
                     successEl.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 360, fill: 'forwards' });
-                    // mimic send and clear inputs after a short delay
+
+                    // Clear inputs after a short delay
                     setTimeout(() => {
                         document.getElementById('qc-name').value = '';
                         document.getElementById('qc-email').value = '';
                         document.getElementById('qc-message').value = '';
                     }, 700);
                 }
+
+                // Update customer count display
+                function updateCustomerCount() {
+                    const customers = getAllCustomers();
+                    const countText = document.getElementById('customer-count-text');
+                    if (countText) {
+                        countText.textContent = `${customers.length} customer record(s) stored`;
+                    }
+                }
+
+                // Initialize database on page load
+                initCustomerDatabase();
+                updateCustomerCount();
             </script>
         </div>
         </div>
