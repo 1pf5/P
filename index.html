@@ -1961,6 +1961,7 @@
                         onsubmit="event.preventDefault(); quickContactSubmit();">
                         <input type="text" id="qc-name" name="name" placeholder="Your name" required />
                         <input type="email" id="qc-email" name="email" placeholder="Your email" required />
+                        <input type="tel" id="qc-phone" name="phone" placeholder="Your phone (optional)" />
                         <textarea id="qc-message" name="message" placeholder="Short message..." required></textarea>
                         <button type="submit" class="btn-cta" aria-label="Send message">
                             <i class="fas fa-paper-plane" style="width:14px"></i> Send Message
@@ -1990,8 +1991,16 @@
                         <button onclick="document.getElementById('qc-name').focus();" class="btn btn-primary"
                             style="padding:10px 12px;border-radius:8px;">Quick Message</button>
                         <button onclick="exportToExcel();" class="btn btn-primary"
-                            style="padding:10px 12px;border-radius:8px;background-color:#10b981;border-color:#10b981;">
+                            style="padding:10px 12px;border-radius:8px;background-color:#3b82f6;border-color:#3b82f6;">
                             <i class="fas fa-file-excel" style="width:14px;margin-right:5px;"></i> Export to Excel
+                        </button>
+                        <button onclick="syncToExcel();" class="btn btn-primary"
+                            style="padding:10px 12px;border-radius:8px;background-color:#10b981;border-color:#10b981;">
+                            <i class="fas fa-sync-alt" style="width:14px;margin-right:5px;"></i> Sync to Excel
+                        </button>
+                        <button onclick="showExcelConfig();" class="btn btn-outline"
+                            style="padding:10px 12px;border-radius:8px;border-color:#6366f1;color:#6366f1;">
+                            <i class="fas fa-cog" style="width:14px;margin-right:5px;"></i> Configure Excel
                         </button>
                     </div>
 
@@ -2000,6 +2009,131 @@
                             style="padding:8px;background-color:#f0f9ff;border-radius:6px;font-size:0.85rem;color:#0369a1;">
                             <i class="fas fa-database" style="margin-right:5px;"></i>
                             <span id="customer-count-text">Loading...</span>
+                        </div>
+                        <div id="excel-status"
+                            style="margin-top:8px;padding:8px;background-color:#f0fdf4;border-radius:6px;font-size:0.85rem;color:#166534;display:none;">
+                            <i class="fas fa-check-circle" style="margin-right:5px;"></i>
+                            <span id="excel-status-text">Excel configured successfully</span>
+                        </div>
+                    </div>
+
+                    <!-- Excel Configuration Modal -->
+                    <div id="excelConfigModal"
+                        style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;align-items:center;justify-content:center;"
+                        onclick="if(event.target.id === 'excelConfigModal') closeExcelConfig();">
+                        <div style="background:white;padding:30px;border-radius:12px;max-width:700px;width:90%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);"
+                            onclick="event.stopPropagation();">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+                                <h3 style="margin:0;color:#1f2937;font-size:1.5rem;">Configure Excel Export Settings
+                                </h3>
+                                <button onclick="closeExcelConfig();"
+                                    style="background:none;border:none;font-size:24px;color:#6b7280;cursor:pointer;padding:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;">&times;</button>
+                            </div>
+
+                            <!-- Export Mode Selection -->
+                            <div
+                                style="margin-bottom:25px;padding:15px;background-color:#f0f9ff;border-radius:8px;border-left:4px solid #3b82f6;">
+                                <label style="display:block;margin-bottom:10px;font-weight:600;color:#374151;">
+                                    <i class="fas fa-file-excel" style="margin-right:5px;"></i>Export Mode:
+                                </label>
+                                <div style="display:flex;gap:15px;flex-wrap:wrap;">
+                                    <label style="display:flex;align-items:center;cursor:pointer;">
+                                        <input type="radio" name="export-mode" value="download" checked
+                                            style="margin-right:8px;">
+                                        <span>Download Excel File</span>
+                                    </label>
+                                    <label style="display:flex;align-items:center;cursor:pointer;">
+                                        <input type="radio" name="export-mode" value="sheets" style="margin-right:8px;">
+                                        <span>Export to Google Sheets</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Sheet 1: Phone Data Configuration -->
+                            <div
+                                style="margin-bottom:25px;padding:20px;background-color:#f9fafb;border-radius:8px;border:2px solid #e5e7eb;">
+                                <h4
+                                    style="margin:0 0 15px 0;color:#1f2937;font-size:1.1rem;display:flex;align-items:center;">
+                                    <i class="fas fa-phone" style="margin-right:8px;color:#10b981;"></i>
+                                    Sheet 1: Phone Data (Owner Provided)
+                                </h4>
+                                <div style="margin-bottom:15px;">
+                                    <label style="display:block;margin-bottom:8px;font-weight:600;color:#374151;">Google
+                                        Sheets Link for Phone Data:</label>
+                                    <input type="text" id="phone-sheet-link"
+                                        placeholder="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit"
+                                        style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:0.95rem;">
+                                    <p style="margin-top:6px;font-size:0.85rem;color:#6b7280;">
+                                        <i class="fas fa-info-circle" style="margin-right:5px;"></i>
+                                        Link to Google Sheet where phone data will be stored
+                                    </p>
+                                </div>
+                                <div style="margin-bottom:15px;">
+                                    <label style="display:block;margin-bottom:8px;font-weight:600;color:#374151;">Sheet
+                                        Name (within the file):</label>
+                                    <input type="text" id="phone-sheet-name" value="Phone Data" placeholder="Phone Data"
+                                        style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:0.95rem;">
+                                </div>
+                            </div>
+
+                            <!-- Sheet 2: Messages Configuration -->
+                            <div
+                                style="margin-bottom:25px;padding:20px;background-color:#f9fafb;border-radius:8px;border:2px solid #e5e7eb;">
+                                <h4
+                                    style="margin:0 0 15px 0;color:#1f2937;font-size:1.1rem;display:flex;align-items:center;">
+                                    <i class="fas fa-comments" style="margin-right:8px;color:#6366f1;"></i>
+                                    Sheet 2: Messages (User Provided)
+                                </h4>
+                                <div style="margin-bottom:15px;">
+                                    <label style="display:block;margin-bottom:8px;font-weight:600;color:#374151;">Google
+                                        Sheets Link for Messages:</label>
+                                    <input type="text" id="message-sheet-link"
+                                        placeholder="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit"
+                                        style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:0.95rem;">
+                                    <p style="margin-top:6px;font-size:0.85rem;color:#6b7280;">
+                                        <i class="fas fa-info-circle" style="margin-right:5px;"></i>
+                                        Link to Google Sheet where messages will be stored
+                                    </p>
+                                </div>
+                                <div style="margin-bottom:15px;">
+                                    <label style="display:block;margin-bottom:8px;font-weight:600;color:#374151;">Sheet
+                                        Name (within the file):</label>
+                                    <input type="text" id="message-sheet-name" value="Messages" placeholder="Messages"
+                                        style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:0.95rem;">
+                                </div>
+                            </div>
+
+                            <!-- Export Options -->
+                            <div
+                                style="margin-bottom:20px;padding:15px;background-color:#fef3c7;border-radius:8px;border-left:4px solid #f59e0b;">
+                                <h4 style="margin:0 0 10px 0;color:#92400e;font-size:1rem;">Export Options:</h4>
+                                <div style="display:flex;flex-direction:column;gap:10px;">
+                                    <label style="display:flex;align-items:center;cursor:pointer;">
+                                        <input type="checkbox" id="export-phone-data" checked style="margin-right:8px;">
+                                        <span>Export Phone Data (Name, Email, Phone) to Sheet 1</span>
+                                    </label>
+                                    <label style="display:flex;align-items:center;cursor:pointer;">
+                                        <input type="checkbox" id="export-messages" checked style="margin-right:8px;">
+                                        <span>Export Messages to Sheet 2</span>
+                                    </label>
+                                    <label style="display:flex;align-items:center;cursor:pointer;">
+                                        <input type="checkbox" id="include-timestamp" checked style="margin-right:8px;">
+                                        <span>Include Timestamp in both sheets</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div style="display:flex;gap:10px;margin-top:25px;">
+                                <button onclick="saveExcelConfig();" class="btn btn-primary"
+                                    style="flex:1;padding:12px;border-radius:8px;">
+                                    <i class="fas fa-save" style="margin-right:5px;"></i> Save Configuration
+                                </button>
+                                <button onclick="closeExcelConfig();" class="btn btn-outline"
+                                    style="flex:1;padding:12px;border-radius:8px;">
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2014,13 +2148,14 @@
                 }
 
                 // Save customer data to database (localStorage)
-                function saveCustomerData(name, email, message) {
+                function saveCustomerData(name, email, message, phone = '') {
                     initCustomerDatabase();
                     const database = JSON.parse(localStorage.getItem('customerDatabase'));
                     const customerData = {
                         id: Date.now(), // Unique ID based on timestamp
                         name: name,
                         email: email,
+                        phone: phone,
                         message: message,
                         date: new Date().toISOString(),
                         timestamp: new Date().toLocaleString()
@@ -2036,7 +2171,85 @@
                     return JSON.parse(localStorage.getItem('customerDatabase'));
                 }
 
-                // Export customer data to Excel
+                // Get Excel export configuration
+                function getExcelConfig() {
+                    const config = localStorage.getItem('excelExportConfig');
+                    return config ? JSON.parse(config) : {
+                        exportMode: 'download',
+                        phoneSheetLink: '',
+                        phoneSheetName: 'Phone Data',
+                        messageSheetLink: '',
+                        messageSheetName: 'Messages',
+                        exportPhoneData: true,
+                        exportMessages: true,
+                        includeTimestamp: true
+                    };
+                }
+
+                // Save Excel export configuration
+                function saveExcelConfig() {
+                    const exportMode = document.querySelector('input[name="export-mode"]:checked')?.value || 'download';
+                    const phoneSheetLink = document.getElementById('phone-sheet-link').value.trim();
+                    const phoneSheetName = document.getElementById('phone-sheet-name').value.trim() || 'Phone Data';
+                    const messageSheetLink = document.getElementById('message-sheet-link').value.trim();
+                    const messageSheetName = document.getElementById('message-sheet-name').value.trim() || 'Messages';
+                    const exportPhoneData = document.getElementById('export-phone-data').checked;
+                    const exportMessages = document.getElementById('export-messages').checked;
+                    const includeTimestamp = document.getElementById('include-timestamp').checked;
+
+                    const config = {
+                        exportMode,
+                        phoneSheetLink,
+                        phoneSheetName,
+                        messageSheetLink,
+                        messageSheetName,
+                        exportPhoneData,
+                        exportMessages,
+                        includeTimestamp
+                    };
+
+                    localStorage.setItem('excelExportConfig', JSON.stringify(config));
+
+                    // Show success message
+                    const statusEl = document.getElementById('excel-status');
+                    const statusText = document.getElementById('excel-status-text');
+                    if (statusEl && statusText) {
+                        statusText.textContent = 'Excel configuration saved successfully!';
+                        statusEl.style.display = 'block';
+                        setTimeout(() => {
+                            statusEl.style.display = 'none';
+                        }, 3000);
+                    }
+
+                    closeExcelConfig();
+                    alert('Excel export configuration saved successfully!');
+                }
+
+                // Show Excel configuration modal
+                function showExcelConfig() {
+                    const modal = document.getElementById('excelConfigModal');
+                    const config = getExcelConfig();
+
+                    // Load saved configuration
+                    document.querySelector(`input[name="export-mode"][value="${config.exportMode}"]`).checked = true;
+                    document.getElementById('phone-sheet-link').value = config.phoneSheetLink || '';
+                    document.getElementById('phone-sheet-name').value = config.phoneSheetName || 'Phone Data';
+                    document.getElementById('message-sheet-link').value = config.messageSheetLink || '';
+                    document.getElementById('message-sheet-name').value = config.messageSheetName || 'Messages';
+                    document.getElementById('export-phone-data').checked = config.exportPhoneData !== false;
+                    document.getElementById('export-messages').checked = config.exportMessages !== false;
+                    document.getElementById('include-timestamp').checked = config.includeTimestamp !== false;
+
+                    modal.style.display = 'flex';
+                }
+
+                // Close Excel configuration modal
+                function closeExcelConfig() {
+                    const modal = document.getElementById('excelConfigModal');
+                    modal.style.display = 'none';
+                }
+
+                // Export customer data to Excel with dual sheet support
                 function exportToExcel() {
                     const customers = getAllCustomers();
                     if (customers.length === 0) {
@@ -2044,31 +2257,71 @@
                         return;
                     }
 
-                    // Prepare data for Excel
-                    const excelData = customers.map(customer => ({
-                        'ID': customer.id,
-                        'Name': customer.name,
-                        'Email': customer.email,
-                        'Message': customer.message,
-                        'Date': customer.timestamp
-                    }));
+                    const config = getExcelConfig();
 
-                    // Create worksheet
-                    const ws = XLSX.utils.json_to_sheet(excelData);
-
-                    // Set column widths
-                    const colWidths = [
-                        { wch: 15 }, // ID
-                        { wch: 25 }, // Name
-                        { wch: 30 }, // Email
-                        { wch: 50 }, // Message
-                        { wch: 25 }  // Date
-                    ];
-                    ws['!cols'] = colWidths;
+                    // If export mode is Google Sheets, use sync function
+                    if (config.exportMode === 'sheets') {
+                        syncToExcel();
+                        return;
+                    }
 
                     // Create workbook
                     const wb = XLSX.utils.book_new();
-                    XLSX.utils.book_append_sheet(wb, ws, 'Customers');
+
+                    // Prepare Phone Data Sheet (Sheet 1)
+                    if (config.exportPhoneData) {
+                        const phoneData = customers.map(customer => {
+                            const data = {
+                                'ID': customer.id,
+                                'Name': customer.name,
+                                'Email': customer.email
+                            };
+                            // Extract phone from email or add phone field if exists
+                            if (customer.phone) {
+                                data['Phone'] = customer.phone;
+                            }
+                            if (config.includeTimestamp) {
+                                data['Date'] = customer.timestamp || customer.date;
+                            }
+                            return data;
+                        });
+
+                        const wsPhone = XLSX.utils.json_to_sheet(phoneData);
+                        wsPhone['!cols'] = [
+                            { wch: 15 }, // ID
+                            { wch: 25 }, // Name
+                            { wch: 30 }, // Email
+                            { wch: 20 }, // Phone
+                            { wch: 25 }  // Date
+                        ];
+                        XLSX.utils.book_append_sheet(wb, wsPhone, config.phoneSheetName || 'Phone Data');
+                    }
+
+                    // Prepare Messages Sheet (Sheet 2)
+                    if (config.exportMessages) {
+                        const messageData = customers.map(customer => {
+                            const data = {
+                                'ID': customer.id,
+                                'Name': customer.name,
+                                'Email': customer.email,
+                                'Message': customer.message
+                            };
+                            if (config.includeTimestamp) {
+                                data['Date'] = customer.timestamp || customer.date;
+                            }
+                            return data;
+                        });
+
+                        const wsMessage = XLSX.utils.json_to_sheet(messageData);
+                        wsMessage['!cols'] = [
+                            { wch: 15 }, // ID
+                            { wch: 25 }, // Name
+                            { wch: 30 }, // Email
+                            { wch: 50 }, // Message
+                            { wch: 25 }  // Date
+                        ];
+                        XLSX.utils.book_append_sheet(wb, wsMessage, config.messageSheetName || 'Messages');
+                    }
 
                     // Generate filename with current date
                     const date = new Date().toISOString().split('T')[0];
@@ -2077,22 +2330,100 @@
                     // Download file
                     XLSX.writeFile(wb, filename);
 
-                    alert(`Successfully exported ${customers.length} customer record(s) to Excel!`);
+                    const sheetCount = (config.exportPhoneData ? 1 : 0) + (config.exportMessages ? 1 : 0);
+                    alert(`Successfully exported ${customers.length} customer record(s) to ${sheetCount} sheet(s) in Excel!`);
+                }
+
+                // Sync data to Google Sheets
+                async function syncToExcel() {
+                    const customers = getAllCustomers();
+                    if (customers.length === 0) {
+                        alert('No customer data available to sync!');
+                        return;
+                    }
+
+                    const config = getExcelConfig();
+
+                    if (!config.phoneSheetLink && !config.messageSheetLink) {
+                        alert('Please configure Google Sheets links in the settings first!');
+                        showExcelConfig();
+                        return;
+                    }
+
+                    try {
+                        // Prepare phone data
+                        if (config.exportPhoneData && config.phoneSheetLink) {
+                            const phoneData = customers.map(customer => {
+                                const row = [
+                                    customer.id,
+                                    customer.name,
+                                    customer.email,
+                                    customer.phone || ''
+                                ];
+                                if (config.includeTimestamp) {
+                                    row.push(customer.timestamp || customer.date);
+                                }
+                                return row;
+                            });
+
+                            // Add headers
+                            const headers = ['ID', 'Name', 'Email', 'Phone'];
+                            if (config.includeTimestamp) {
+                                headers.push('Date');
+                            }
+                            phoneData.unshift(headers);
+
+                            // Try to sync to Google Sheets (this would require Google Apps Script)
+                            // For now, we'll show instructions
+                            alert('Google Sheets sync requires Google Apps Script setup. Please use the download option or set up the Google Apps Script Web App URL in settings.');
+                        }
+
+                        // Prepare message data
+                        if (config.exportMessages && config.messageSheetLink) {
+                            const messageData = customers.map(customer => {
+                                const row = [
+                                    customer.id,
+                                    customer.name,
+                                    customer.email,
+                                    customer.message
+                                ];
+                                if (config.includeTimestamp) {
+                                    row.push(customer.timestamp || customer.date);
+                                }
+                                return row;
+                            });
+
+                            // Add headers
+                            const headers = ['ID', 'Name', 'Email', 'Message'];
+                            if (config.includeTimestamp) {
+                                headers.push('Date');
+                            }
+                            messageData.unshift(headers);
+                        }
+
+                        // Fallback to download if Google Sheets sync is not configured
+                        exportToExcel();
+                    } catch (error) {
+                        console.error('Error syncing to Google Sheets:', error);
+                        alert('Error syncing to Google Sheets. Falling back to download...');
+                        exportToExcel();
+                    }
                 }
 
                 // Enhanced form submission handler
                 function quickContactSubmit() {
                     const name = document.getElementById('qc-name').value.trim();
                     const email = document.getElementById('qc-email').value.trim();
+                    const phone = document.getElementById('qc-phone').value.trim();
                     const message = document.getElementById('qc-message').value.trim();
 
                     if (!name || !email || !message) {
-                        alert('Please fill in all fields!');
+                        alert('Please fill in all required fields!');
                         return;
                     }
 
                     // Save customer data to database
-                    saveCustomerData(name, email, message);
+                    saveCustomerData(name, email, message, phone);
 
                     // Update customer count
                     updateCustomerCount();
@@ -2107,6 +2438,7 @@
                     setTimeout(() => {
                         document.getElementById('qc-name').value = '';
                         document.getElementById('qc-email').value = '';
+                        document.getElementById('qc-phone').value = '';
                         document.getElementById('qc-message').value = '';
                     }, 700);
                 }
